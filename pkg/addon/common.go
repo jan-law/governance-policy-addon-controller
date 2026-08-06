@@ -66,6 +66,7 @@ type GlobalValues struct {
 	ImagePullSecret string            `json:"imagePullSecret,omitempty"`
 	ImageOverrides  map[string]string `json:"imageOverrides,omitempty"`
 	ProxyConfig     *ProxyConfig      `json:"proxyConfig,omitempty"`
+	NetworkPolicies *NetworkPolicies  `json:"networkPolicies,omitempty"`
 }
 
 // ProxyConfig contains proxy configuration values for the addon chart.
@@ -75,6 +76,11 @@ type ProxyConfig struct {
 	HTTPProxy  string `json:"HTTP_PROXY,omitempty"`
 	HTTPSProxy string `json:"HTTPS_PROXY,omitempty"`
 	NoProxy    string `json:"NO_PROXY,omitempty"`
+}
+
+// NetworkPolicies contains network policies configuration values for the addon chart.
+type NetworkPolicies struct {
+	Enabled bool `json:"enabled,omitempty"`
 }
 
 // BaseValues contains base values for the addon chart.
